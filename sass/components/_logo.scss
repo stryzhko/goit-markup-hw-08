@@ -1,0 +1,35 @@
+
+.logo {
+    display: inline-block;
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    @include font($fs: 24px, $lh: 28px);
+    color: var(--primary-text-color);
+    transition: color var(--transition-duration-function);
+
+    &:hover,
+    &:focus {
+            color: var(--accent-color-link);
+        }
+}
+.logo__text {
+    color: var(--color-logo-span);
+}
+@media screen and (min-width: 1200px){
+    .logo{
+        @include font($fs: 28px, $lh: 30px);
+
+    }
+}
+
+// .logo__page-header {
+//     color: var(--color-logo-header);
+//     margin-right: 93px;
+//     padding-top: 24px;
+//     padding-bottom: 24px;
+// }
+
+.logo__footer {
+    color: var(--color-logo-footer);
+    margin-bottom: 20px;
+}
