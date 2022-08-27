@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   z-index: 100;
+  overflow-y: scroll;
   opacity: 1;
   transform: scale(1);
   transition: opacity var(--transition-duration-function),
@@ -26,8 +27,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  height: 581px;
+  width: 100%;
+  // height: 581px;
   background-color: var(--primary-background-color);
   padding: 40px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -50,7 +51,7 @@
   border-radius: 50%;
 }
 
-.close-button-icon {
+.close-button__icon {
   fill: var(--primary-text-color);
   transition: fill var(--transition-duration-function);
 
@@ -65,7 +66,7 @@
   flex-direction: column;
 }
 
-.modal-form-input {
+.modal-form__input {
   padding: 0;
   width: 100%;
   height: 40px;
@@ -80,40 +81,36 @@
   }
 }
 
-.modal-form-input:focus + .modal-form-input-icon {
-  color: var(--accent-color-link);
-}
+// .modal-form-input:focus + .modal-form-input-icon {
+//   color: var(--accent-color-link);
+// }
 
-.modal-form-input-desc {
+.modal-form__input-desc {
   display: block;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
+  @include font($fs: 12px, $lh: 14px, $ls: 0.01em);
   margin-bottom: 4px;
   color: var(--secondary-text-color);
 }
 
-.modal-form-desc {
+.modal-form__desc {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
+  @include font($fs: 20px, $lh: 30px);
   text-align: center;
-  letter-spacing: 0.03em;
   margin-bottom: 12px;
 
   color: var(--primary-text-color);
 }
 
-.modal-form-field {
+.modal-form__field {
   margin-bottom: 10px;
 }
 
-.modal-form-field-message {
+.modal-form__field-message {
   margin-bottom: 20px;
 }
 
-.modal-form-input-wrapper {
+.modal-form__input-wrapper {
   position: relative;
 }
 
@@ -124,12 +121,12 @@
   transform: translateY(-50%);
   transition: fill var(--transition-duration-function);
 
-  .modal-form-input:focus + & {
+  .modal-form__input:focus + & {
     fill: var(--accent-color-link);
   }
 }
 
-.modal-form-message {
+.modal-form__message {
   display: block;
   resize: none;
   width: 100%;
@@ -152,20 +149,22 @@
   }
 }
 
-.modal-form-checkbox {
+.modal-form__checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-
-  color: var(--secondary-text-color);
+  // font-weight: 400;
+  // @include font($fs: 12px, $lh: 14px);
+  // color: var(--secondary-text-color);
   margin-bottom: 30px;
 }
+.modal-form__check-text{
+  font-weight: 400;
+    @include font($fs: 12px, $lh: 14px);
+    color: var(--secondary-text-color);
+}
 
-.modal-form-check {
+.modal-form__check {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -178,7 +177,7 @@
   margin: -1px;
 }
 
-.modal-form-check-icon {
+.modal-form__check-icon {
   display: flex;
   align-items: center;
   width: 16px;
@@ -188,11 +187,11 @@
   cursor: pointer;
   margin-right: 7px;
 
-.modal-form-check:checked+& {
+.modal-form__check:checked+& {
         border: none;
     }
 
-.modal-form-check:focus+& {
+.modal-form__check:focus+& {
         outline: 2px solid var(--accent-color-link);
     }
 }
@@ -202,7 +201,7 @@
   fill: currentColor;
 }
 
-.modal-form-check:checked + .modal-form-check-icon>.icon-input-check {
+.modal-form__check:checked + .modal-form__check-icon>.icon-input-check {
   border-radius: 2px;
   border-color: var(--background-color-button);
   background-color: var(--background-color-button);
@@ -210,10 +209,6 @@
   opacity: 1;
   transition: opacity var(--transition-duration-function);
 }
-
-
-
-
 
 .form-link-policy {
   color: var(--accent-color-link);
@@ -247,3 +242,34 @@
     background-color: var(--background-color-button-hover);
   }
 }
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  // .modal {
+  //   width: 528px;
+  // }
+}
+
+@media screen and (max-height: 609px) {
+  .modal {
+    top: 15px;
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .modal {
+      width: 528px;
+    }
+.modal-form__desc{
+  line-height: 23px;
+}
+.modal-form__check-text{
+  @include font();
+}
+}
+
