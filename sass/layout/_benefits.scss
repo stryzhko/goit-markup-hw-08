@@ -46,39 +46,3 @@
             flex-basis: calc((100% - 90px) / 4);
 }
 }
-// .benefits {
-//     display: flex;
-// }
-
-// .benefits__item {
-//     flex-basis: calc((100% - 60px) / 4);
-
-//     &:not(:last-child) {
-//             margin-right: 30px;
-//         }
-// }
-
-
-
-// .benefits__icon-wrapper {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 120px;
-//     background-color: var(--secondary-background-color);
-//     border-radius: 4px;
-
-//     margin-bottom: 30px;
-// }
-
-// .benefits__title {
-//     @include font($lh: 16px);
-//     text-transform: uppercase;
-
-//     margin-bottom: 10px;
-// }
-
-// .benefits__description {
-// @include font();
-//     color: var(--secondary-text-color);
-// }

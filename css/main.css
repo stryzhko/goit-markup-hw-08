@@ -20,7 +20,7 @@
   --background-color-button: #2196f3;
   --background-color-button-hover: #188ce8;
   --color-address: rgba(255, 255, 255, 0.6);
-  --transition-duration-function: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
